@@ -1,4 +1,4 @@
-Week 0 
+**Week 0**
 
 - The administrator (owner) of the library should be able to add new books and the number of copies in the library.
 - Users should be able to see the available books and borrow them by their id.
