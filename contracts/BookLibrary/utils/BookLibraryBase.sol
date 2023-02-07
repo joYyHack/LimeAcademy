@@ -16,8 +16,8 @@ abstract contract BookLibraryBase is Ownable {
     struct Book {
         uint256 id;
         string name;
-        uint128 numberOfCopies;
-        uint128 accessibility;
+        uint256 numberOfCopies;
+        uint256 accessibility;
     }
 
     enum BookStatus {
