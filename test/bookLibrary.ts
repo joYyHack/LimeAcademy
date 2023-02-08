@@ -2,7 +2,7 @@ import { ethers, network } from "hardhat";
 import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 
 import { BigNumber } from "ethers";
-import { Signer } from "@ethersproject/abstract-signer/src.ts/index";
+import { Signer } from "ethers";
 import { expect } from "chai";
 
 import { BookLibrary } from "../typechain-types";
