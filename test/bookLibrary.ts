@@ -1,8 +1,11 @@
 import { ethers, network } from "hardhat";
-import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
+import {
+  loadFixture,
+  setBalance,
+} from "@nomicfoundation/hardhat-network-helpers";
 
-import { BigNumber } from "ethers";
-import { Signer } from "ethers";
+import { BigNumber, Signer, Wallet } from "ethers";
+import { utils } from "ethers/lib";
 import { expect } from "chai";
 
 import { BookLibrary } from "../typechain-types";
@@ -19,6 +22,7 @@ import {
 import type { BookLibraryBase } from "../typechain-types/contracts/BookLibrary/utils";
 
 describe("Book library basic functions", () => {
+  const provider = ethers.provider;
   let bookLibrary: BookLibrary;
   let owner: Signer;
   let alice: Signer;
@@ -26,7 +30,20 @@ describe("Book library basic functions", () => {
   let books: BookLibraryBase.BookStruct[];
 
   async function initialState() {
-    [owner, alice, bob] = await ethers.getSigners();
+    owner = new Wallet("0x" + "dead".padEnd(64, "0"), ethers.provider);
+    alice = new Wallet("0x" + "a11ce".padEnd(64, "0"), ethers.provider);
+    bob = new Wallet("0x" + "b0b".padEnd(64, "0"), ethers.provider);
+
+    for (const wallet of [owner, alice, bob]) {
+      await provider.send("hardhat_setBalance", [
+        await wallet.getAddress(),
+        utils
+          .parseEther((100_000).toString())
+          .toHexString()
+          .replace("0x0", "0x"),
+      ]);
+    }
+
     bookLibrary = (await deploy("BookLibrary", owner)) as BookLibrary;
   }
 
