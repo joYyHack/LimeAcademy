@@ -35,5 +35,14 @@
 ### Task 2 
 - [x] Create a copy of your script and perform the same interactions but on Goerli testnet
 
+## Week 4
+- [x] Apply Slither on your Library contract
+### To run slither
+```
+slither . --filter-paths "openzeppelin|console.sol" --exclude solc-version
+```
 ### [Verified contract](https://goerli.etherscan.io/address/0x558551C0De9aE617B7794fEa2da33167d56b9937#code)
 ![image](https://user-images.githubusercontent.com/94608729/217580804-87bba46b-3abc-4ce0-a57d-96b712bb9278.png)
+
+### Slither
+![image](https://user-images.githubusercontent.com/94608729/222546390-a3e0d3a2-fb11-4977-bf92-5bd69555cf15.png)
