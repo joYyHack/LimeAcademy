@@ -22,5 +22,18 @@
 - [x] Verify your contract on Etherscan
 - [x] Include a link into the Readme to the verified contract
 
+## Week 3
+### Task 1
+- [x] Creates a book
+- [x] Checks all available books
+- [x] Rents a book
+- [x] Checks that it is rented
+- [x] Returns the book
+- [x] Checks the availability of the book
+- [x] Format the data in the right format thanks to what you've learned in Advanced Ethers.js tricks
+
+### Task 2 
+- [x] Create a copy of your script and perform the same interactions but on Goerli testnet
+
 ### [Verified contract](https://goerli.etherscan.io/address/0x558551C0De9aE617B7794fEa2da33167d56b9937#code)
 ![image](https://user-images.githubusercontent.com/94608729/217580804-87bba46b-3abc-4ce0-a57d-96b712bb9278.png)
